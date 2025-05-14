@@ -33,6 +33,6 @@ func _ready() -> void:
 	
 func handle_spawn(enemy_scene: PackedScene, timer: Timer, time_offset: float = 1.0) -> void:
 	spawner_component.scene = enemy_scene
-	spawner_component.spawn(Vector2(randf_range(margin, screen_width-margin), -8))
+	spawner_component.spawn(Vector2(randf_range(margin, screen_width-margin), 0))
 	var spawn_rate = time_offset / (0.5 + (game_stats.score * 0.015))
 	timer.start(spawn_rate + randf_range(0.25, 05))

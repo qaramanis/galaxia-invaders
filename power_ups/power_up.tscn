@@ -32,16 +32,17 @@ metadata/_custom_type_script = "uid://clhrjoloqjr2c"
 script = ExtResource("5_6ppud")
 metadata/_custom_type_script = "uid://rbj8cldddtlp"
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-
-[node name="FlashComponent" type="Node" parent="."]
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("6_3ivhi")
+sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://cb30vdkogpydn"
 
-[node name="ScaleComponent" type="Node" parent="."]
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("6_p5ef7")
+sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://8qg5kbkrjcur"
 
-[node name="ShakeComponent" type="Node" parent="."]
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("8_4qykb")
+node = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://bxylq1m1e2uby"

@@ -15,4 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_anything_pressed():
 		game_stats.score = 0
+		TransitionScreen.transition()
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://menus/menu.tscn")

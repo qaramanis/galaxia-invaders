@@ -22,7 +22,6 @@ buses/default_bus_layout="res://sounds/default_bus_layout.tres"
 [autoload]
 
 TransitionScreen="*res://transition_screen.tscn"
-Ship="*res://player_ship/ship.tscn"
 
 [display]
 
