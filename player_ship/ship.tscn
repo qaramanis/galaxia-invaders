@@ -133,7 +133,6 @@ metadata/_custom_type_script = "uid://8qg5kbkrjcur"
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("11_1xpe7")
-health = 3
 metadata/_custom_type_script = "uid://rbj8cldddtlp"
 
 [node name="HurtboxComponent" type="Area2D" parent="."]

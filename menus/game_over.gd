@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		game_stats.score = 0
 		TransitionScreen.transition()
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://menus/menu.tscn")
+		get_tree().change_scene_to_file("res://world.tscn")
 
 func load_highscore() -> void:
 	var config = ConfigFile.new()

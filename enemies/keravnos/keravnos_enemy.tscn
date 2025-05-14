@@ -94,11 +94,11 @@ shape = SubResource("RectangleShape2D_i67yq")
 velocity = Vector2(0, 15)
 
 [node name="StatsComponent" parent="." index="4"]
-health = 3
+health = 6
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="5"]
 position = Vector2(2.38419e-07, 5.96046e-07)
 scale = Vector2(0.9, 0.8)
 
 [node name="ScoreComponent" parent="." index="12"]
-adjust_amount = 8
+adjust_amount = 6
