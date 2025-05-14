@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt1iu4plefeq6"]
+[gd_scene load_steps=11 format=3 uid="uid://bt1iu4plefeq6"]
 
 [ext_resource type="Script" uid="uid://bdlqxs5udn1tq" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cjoydvhiue75e" path="res://player_ship/ship.tscn" id="1_f3sb7"]
 [ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="2_dwbse"]
 [ext_resource type="PackedScene" uid="uid://btujomquwsc16" path="res://enemies/enemy_generator/enemy_generator.tscn" id="3_tlwt5"]
 [ext_resource type="LabelSettings" uid="uid://c03iwwiqkc132" path="res://fonts/subtitle_label_settings.tres" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://cc73yvccgrsaf" path="res://power_ups/PowerUpGenerator.tscn" id="5_wse8f"]
 [ext_resource type="PackedScene" uid="uid://eff6tiedsj1w" path="res://effects/gameplay_background.tscn" id="7_gbfbk"]
 [ext_resource type="Script" uid="uid://dblrcjambvq8h" path="res://components/score_component.gd" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://cvvwifbk3igp8" path="res://power_ups/nuke_world/nuke_world.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://ddo257tgai1wv" path="res://power_ups/upgrade_laser/upgrade_laser.tscn" id="9_ioo17"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_aqk2v")
@@ -16,6 +19,8 @@ game_stats = ExtResource("2_dwbse")
 position = Vector2(80, 216)
 
 [node name="EnemyGenerator" parent="." instance=ExtResource("3_tlwt5")]
+
+[node name="PowerUpGenerator" parent="." instance=ExtResource("5_wse8f")]
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 160.0
@@ -30,3 +35,9 @@ script = ExtResource("7_pkg7o")
 metadata/_custom_type_script = "uid://dblrcjambvq8h"
 
 [node name="GameplayBackground" parent="." instance=ExtResource("7_gbfbk")]
+
+[node name="NukeWorld" parent="." instance=ExtResource("8_gbfbk")]
+position = Vector2(16, 35)
+
+[node name="PowerUp" parent="." instance=ExtResource("9_ioo17")]
+position = Vector2(79, 142)

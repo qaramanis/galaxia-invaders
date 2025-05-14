@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc73yvccgrsaf"]
+
+[ext_resource type="Script" uid="uid://cfk5csakd7345" path="res://power_ups/power_up_generator.gd" id="1_fidey"]
+[ext_resource type="Script" uid="uid://b2icqvnrurryk" path="res://components/spawner_component.gd" id="1_inl6q"]
+[ext_resource type="PackedScene" uid="uid://ddo257tgai1wv" path="res://power_ups/upgrade_laser/upgrade_laser.tscn" id="2_brsd6"]
+[ext_resource type="PackedScene" uid="uid://cvvwifbk3igp8" path="res://power_ups/nuke_world/nuke_world.tscn" id="3_pjxc4"]
+[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="4_auskt"]
+
+[node name="PowerUpGenerator" type="Node2D"]
+script = ExtResource("1_fidey")
+UpgradeLaserScene = ExtResource("2_brsd6")
+NukeWorldScene = ExtResource("3_pjxc4")
+game_stats = ExtResource("4_auskt")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("1_inl6q")
+metadata/_custom_type_script = "uid://b2icqvnrurryk"
+
+[node name="UpgradeLaserTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="NukeWorldTimer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true

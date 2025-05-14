@@ -94,7 +94,7 @@ shape = SubResource("RectangleShape2D_i67yq")
 velocity = Vector2(0, 15)
 
 [node name="StatsComponent" parent="." index="4"]
-health = 2
+health = 3
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="5"]
 position = Vector2(2.38419e-07, 5.96046e-07)

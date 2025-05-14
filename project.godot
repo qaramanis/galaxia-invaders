@@ -22,6 +22,7 @@ buses/default_bus_layout="res://sounds/default_bus_layout.tres"
 [autoload]
 
 TransitionScreen="*res://transition_screen.tscn"
+Laser="*res://projectiles/laser.tscn"
 
 [display]
 

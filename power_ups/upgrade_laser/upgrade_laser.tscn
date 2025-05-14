@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bbyt7vbetepo7" path="res://power_ups/upgrade_laser/upgrade_laser.gd" id="2_ad1e1"]
 [ext_resource type="Texture2D" uid="uid://c3ckrerdindju" path="res://assets/power_ups/upgrade_laser.png" id="2_bqfhp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqfhp"]
+size = Vector2(12, 12)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ad1e1"]
 animations = [{
 "frames": [{
@@ -15,24 +18,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqfhp"]
-size = Vector2(12, 12)
-
 [node name="PowerUp" instance=ExtResource("1_qmpbm")]
 script = ExtResource("2_ad1e1")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="HurtboxComponent#CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_bqfhp")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_ad1e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("RectangleShape2D_bqfhp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
-shape = SubResource("RectangleShape2D_bqfhp")
-
 [node name="MoveComponent" parent="." index="3"]
 velocity = Vector2(0, 20)
-
-[node name="DurationTimer" type="Timer" parent="." index="8"]
-wait_time = 5.0
-one_shot = true

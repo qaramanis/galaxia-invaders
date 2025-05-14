@@ -66,7 +66,7 @@ position = Vector2(-3, 0)
 polygon = PackedVector2Array(-4, 3, -5, 2, -6, 1, -6, 0, -7, -1, -7, -2, -4, -2, -4, -4, -2, -4, -2, -5, -1, -5, -1, -7, 1, -7, 1, -5, 2, -5, 2, -4, 4, -4, 4, -2, 7, -2, 7, -1, 6, 0, 6, 1, 5, 2, 4, 3, 4, 4, 4, 7, 3, 7, 3, 4, 2, 4, 2, 7, 1, 7, 1, 4, -1, 4, -1, 7, -2, 7, -2, 4, -3, 4, -3, 7, -4, 7)
 
 [node name="StatsComponent" parent="." index="4"]
-health = 8
+health = 4
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="5"]
 position = Vector2(2.38419e-07, 1.19209e-07)

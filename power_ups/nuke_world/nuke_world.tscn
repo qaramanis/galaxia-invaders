@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvvwifbk3igp8"]
+
+[ext_resource type="PackedScene" uid="uid://dibeq7mgier86" path="res://power_ups/power_up.tscn" id="1_wimaq"]
+[ext_resource type="Texture2D" uid="uid://bqyy6htfxtd43" path="res://assets/power_ups/nuke_world.png" id="2_3xl65"]
+[ext_resource type="Script" uid="uid://crojjo58dpxqt" path="res://power_ups/nuke_world/nuke_world.gd" id="2_hlomw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlomw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3xl65")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6ow1"]
+radius = 8.06226
+
+[node name="NukeWorld" instance=ExtResource("1_wimaq")]
+script = ExtResource("2_hlomw")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_hlomw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_d6ow1")
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 20)
