@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://slvxbtlyp7xx" path="res://enemies/kavouris/kavouris_enemy.tscn" id="3_m4hnj"]
 [ext_resource type="PackedScene" uid="uid://bnq12bj7wcoop" path="res://enemies/keravnos/keravnos_enemy.tscn" id="4_fag5v"]
 [ext_resource type="PackedScene" uid="uid://d7itean53d0y" path="res://enemies/prasinos_magkas/prasinos_magkas_enemy.tscn" id="5_rpav0"]
-[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="6_k1062"]
+[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats/game_stats.tres" id="6_k1062"]
 
 [node name="EnemyGenerator" type="Node2D"]
 script = ExtResource("1_k80ol")

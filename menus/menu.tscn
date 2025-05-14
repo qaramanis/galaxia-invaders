@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1mc623vc7sky"]
 
 [ext_resource type="Script" uid="uid://bhs4b1f6d8b1h" path="res://menus/menu.gd" id="1_2d4ws"]
-[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background.tscn" id="1_hl3ms"]
+[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background/space_background.tscn" id="1_hl3ms"]
 [ext_resource type="LabelSettings" uid="uid://cdk7ufex3i6og" path="res://fonts/title_label_settings.tres" id="2_2d4ws"]
 [ext_resource type="LabelSettings" uid="uid://c03iwwiqkc132" path="res://fonts/subtitle_label_settings.tres" id="4_2d4ws"]
 
@@ -76,7 +76,7 @@ horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "PRESS 'ENTER' TO START"
+text = "PRESS 'ENTER' TO PLAY"
 label_settings = ExtResource("4_2d4ws")
 horizontal_alignment = 1
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl2yu4kdwks1l"]
 
 [ext_resource type="Script" uid="uid://juiupvj56hl3" path="res://menus/game_over.gd" id="1_hl86a"]
-[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background.tscn" id="1_v8xbx"]
-[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="2_a6cs8"]
+[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background/space_background.tscn" id="1_v8xbx"]
+[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats/game_stats.tres" id="2_a6cs8"]
 [ext_resource type="LabelSettings" uid="uid://cdk7ufex3i6og" path="res://fonts/title_label_settings.tres" id="2_mq8lb"]
 [ext_resource type="LabelSettings" uid="uid://c03iwwiqkc132" path="res://fonts/subtitle_label_settings.tres" id="4_hl86a"]
 [ext_resource type="FontFile" uid="uid://bxn8mxkj6uk20" path="res://fonts/Kenney Mini Square.ttf" id="6_kwtkc"]
@@ -10,6 +10,21 @@
 [sub_resource type="LabelSettings" id="LabelSettings_mgyup"]
 font = ExtResource("6_kwtkc")
 font_size = 8
+
+[sub_resource type="Animation" id="Animation_ydvg7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/VBoxContainer/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_oa3s2"]
 resource_name = "blinking_text"
@@ -26,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ydvg7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/VBoxContainer/Label:label_settings:font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ntuu1"]

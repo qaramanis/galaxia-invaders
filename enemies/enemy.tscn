@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://cb30vdkogpydn" path="res://components/flash_component.gd" id="8_5kjqt"]
 [ext_resource type="Script" uid="uid://igs2lkrbpa34" path="res://components/hurt_component.gd" id="9_3gnt4"]
 [ext_resource type="Script" uid="uid://b2icqvnrurryk" path="res://components/spawner_component.gd" id="10_kxq03"]
-[ext_resource type="PackedScene" uid="uid://co282iod5wyyc" path="res://effects/explosion_effect.tscn" id="11_8tnyj"]
+[ext_resource type="PackedScene" uid="uid://co282iod5wyyc" path="res://effects/explosion/explosion_effect.tscn" id="11_8tnyj"]
 [ext_resource type="Script" uid="uid://bsjhe56nj4gg7" path="res://components/destroyed_component.gd" id="12_waslk"]
 [ext_resource type="Script" uid="uid://dblrcjambvq8h" path="res://components/score_component.gd" id="13_uuhjc"]
-[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="14_q5xw5"]
+[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats/game_stats.tres" id="14_q5xw5"]
 [ext_resource type="AudioStream" uid="uid://l5r8xtqsvavc" path="res://sounds/hit_sound.wav" id="15_mot02"]
 
 [node name="Enemy" type="Node2D"]

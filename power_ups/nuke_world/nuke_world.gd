@@ -1,6 +1,6 @@
 extends PowerUp
 
-const ExplosionEffect = preload("res://effects/explosion_effect.tscn")
+const ExplosionEffect = preload("res://effects/explosion/explosion_effect.tscn")
 
 func _ready():
 	super()

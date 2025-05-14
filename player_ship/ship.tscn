@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://dwq7bi5q0oo2b" path="res://components/hurtbox_component.gd" id="12_kbeao"]
 [ext_resource type="Script" uid="uid://igs2lkrbpa34" path="res://components/hurt_component.gd" id="13_kbeao"]
 [ext_resource type="Script" uid="uid://bsjhe56nj4gg7" path="res://components/destroyed_component.gd" id="14_a146t"]
-[ext_resource type="PackedScene" uid="uid://co282iod5wyyc" path="res://effects/explosion_effect.tscn" id="15_gglps"]
+[ext_resource type="PackedScene" uid="uid://co282iod5wyyc" path="res://effects/explosion/explosion_effect.tscn" id="15_gglps"]
 [ext_resource type="AudioStream" uid="uid://bkriqlj4dbw2x" path="res://sounds/player_laser.mp3" id="20_5vd58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vd58"]
