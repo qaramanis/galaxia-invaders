@@ -13,6 +13,7 @@ config_version=5
 config/name="galaxia-invaders"
 run/main_scene="uid://b1mc623vc7sky"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://vvdm2lp21tb2"
 
 [audio]
 

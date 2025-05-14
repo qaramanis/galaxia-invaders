@@ -18,7 +18,7 @@ func _ready() -> void:
 	high_score_value.text  = str(game_stats.highscore)
 
 func _process(delta: float) -> void:
-	if Input.is_anything_pressed():
+	if Input.is_action_just_pressed("ui_accept"):
 		game_stats.score = 0
 		TransitionScreen.transition()
 		await get_tree().create_timer(1).timeout
