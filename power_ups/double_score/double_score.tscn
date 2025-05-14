@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdhro386llbwa"]
+
+[ext_resource type="PackedScene" uid="uid://dibeq7mgier86" path="res://power_ups/power_up.tscn" id="1_f6tty"]
+[ext_resource type="Texture2D" uid="uid://s3r763lk46g7" path="res://assets/power_ups/double_score.png" id="2_pthm2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4aqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pthm2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guwc8"]
+radius = 8.0
+
+[node name="DoubleScore" instance=ExtResource("1_f6tty")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_n4aqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_guwc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CircleShape2D_guwc8")

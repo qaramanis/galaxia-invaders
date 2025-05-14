@@ -4,8 +4,8 @@ extends PowerUp
 
 func _ready():
 	super()
-	hitbox_component.collision_mask = 1
 	hitbox_component.hit_hurtbox.connect(_on_player_hit)
+
 
 func _on_player_hit(hurtbox: HurtboxComponent):
 	var ship = hurtbox.get_parent()
