@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1aggrje2gq1k"]
+
+[ext_resource type="Script" uid="uid://005k3rtxynjg" path="res://enemies/enemy.gd" id="1_3t1x0"]
+[ext_resource type="Script" uid="uid://clhrjoloqjr2c" path="res://components/move_component.gd" id="1_7frlh"]
+[ext_resource type="Script" uid="uid://rbj8cldddtlp" path="res://components/stats_component.gd" id="2_orwns"]
+[ext_resource type="Script" uid="uid://8qg5kbkrjcur" path="res://components/scale_component.gd" id="3_07tka"]
+[ext_resource type="Script" uid="uid://bxylq1m1e2uby" path="res://components/shake_component.gd" id="4_3t1x0"]
+[ext_resource type="Script" uid="uid://cb30vdkogpydn" path="res://components/flash_component.gd" id="5_epsnb"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_3t1x0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("1_7frlh")
+actor = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://clhrjoloqjr2c"
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("2_orwns")
+metadata/_custom_type_script = "uid://rbj8cldddtlp"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_07tka")
+sprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://8qg5kbkrjcur"
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("4_3t1x0")
+node = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://bxylq1m1e2uby"
+
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("5_epsnb")
+sprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://cb30vdkogpydn"

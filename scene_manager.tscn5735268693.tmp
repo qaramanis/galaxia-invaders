@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhihv645mkanf"]
+
+[ext_resource type="Script" uid="uid://dk0hg6m2g5gvm" path="res://scene_manager.gd" id="1_jo5df"]
+[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background.tscn" id="2_opu64"]
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_jo5df")
+
+[node name="SpaceBackground" parent="." instance=ExtResource("2_opu64")]

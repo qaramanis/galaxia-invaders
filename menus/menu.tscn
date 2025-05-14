@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1mc623vc7sky"]
+
+[ext_resource type="Script" uid="uid://bhs4b1f6d8b1h" path="res://menus/menu.gd" id="1_2d4ws"]
+[ext_resource type="PackedScene" uid="uid://de4g6bt8oy5ts" path="res://effects/space_background.tscn" id="1_hl3ms"]
+[ext_resource type="LabelSettings" uid="uid://cdk7ufex3i6og" path="res://fonts/title_label_settings.tres" id="2_2d4ws"]
+[ext_resource type="LabelSettings" uid="uid://c03iwwiqkc132" path="res://fonts/subtitle_label_settings.tres" id="4_2d4ws"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2d4ws")
+
+[node name="SpaceBackground" parent="." instance=ExtResource("1_hl3ms")]
+visible = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 59.265
+offset_bottom = 72.265
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GALAXIA INVADERS"
+label_settings = ExtResource("2_2d4ws")
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "PRESS ANY KEY TO START"
+label_settings = ExtResource("4_2d4ws")
+horizontal_alignment = 1

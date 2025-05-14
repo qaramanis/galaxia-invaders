@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://eff6tiedsj1w"]
+
+[ext_resource type="Script" uid="uid://bqgjbmerd6ymx" path="res://effects/gameplay_background.gd" id="1_q3j20"]
+[ext_resource type="Texture2D" uid="uid://5ala75ojsk8o" path="res://assets/background/gameplay_background.png" id="2_0aeuj"]
+[ext_resource type="AudioStream" uid="uid://jf16fsb6nyqu" path="res://sounds/gameplay_ambience.mp3" id="2_1vcai"]
+[ext_resource type="Texture2D" uid="uid://edbtilas3ifb" path="res://assets/background/gameplay-middleground.png" id="3_4iynf"]
+[ext_resource type="Texture2D" uid="uid://b4cwvjysumfhf" path="res://assets/background/gameplay_foreground.png" id="4_1vf2y"]
+
+[node name="GameplayBackground" type="ParallaxBackground"]
+script = ExtResource("1_q3j20")
+
+[node name="GameplayBackgroundLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 960)
+
+[node name="GameplayBackground" type="TextureRect" parent="GameplayBackgroundLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0aeuj")
+
+[node name="GameplayMiddlegroundLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 960)
+
+[node name="GameplayMiddleground" type="TextureRect" parent="GameplayMiddlegroundLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_4iynf")
+stretch_mode = 1
+
+[node name="GameplayForegroundLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 960)
+
+[node name="GameplayForeground" type="TextureRect" parent="GameplayForegroundLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_1vf2y")
+stretch_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1vcai")
+autoplay = true
+parameters/looping = true

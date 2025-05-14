@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnq12bj7wcoop"]
+
+[ext_resource type="PackedScene" uid="uid://c1aggrje2gq1k" path="res://enemies/enemy.tscn" id="1_bos6d"]
+[ext_resource type="Texture2D" uid="uid://cnaqxwcjy3s8w" path="res://assets/keravnos/keravnos_1.png" id="2_i67yq"]
+[ext_resource type="Texture2D" uid="uid://cvsflp6ws15kv" path="res://assets/keravnos/keravnos_2.png" id="3_0m5hv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnal2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0m5hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i67yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0m5hv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i67yq"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i67yq"]
+size = Vector2(16, 16)
+
+[node name="KeravnosEnemy" instance=ExtResource("1_bos6d")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_tnal2")
+autoplay = "default"
+frame = 7
+frame_progress = 0.118934
+
+[node name="HitboxComponent" parent="." index="1"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i67yq")
+
+[node name="HurtboxComponent" parent="." index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_i67yq")
+
+[node name="MoveComponent" parent="." index="3"]
+velocity = Vector2(0, 15)
+
+[node name="StatsComponent" parent="." index="4"]
+health = 2
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(2.38419e-07, 5.96046e-07)
+scale = Vector2(0.9, 0.8)
+
+[node name="ScoreComponent" parent="." index="12"]
+adjust_amount = 8

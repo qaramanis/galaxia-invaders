@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddo257tgai1wv"]
+
+[ext_resource type="PackedScene" uid="uid://dibeq7mgier86" path="res://power_ups/power_up.tscn" id="1_qmpbm"]
+[ext_resource type="Texture2D" uid="uid://c3ckrerdindju" path="res://assets/power_ups/upgrade_laser.png" id="2_bqfhp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad1e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bqfhp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PowerUp" instance=ExtResource("1_qmpbm")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ad1e1")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(4.76837e-07, -1.13249e-07)
+scale = Vector2(0.6, 0.6)

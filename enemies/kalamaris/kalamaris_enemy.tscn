@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp5fqmyvtjgs7"]
+
+[ext_resource type="PackedScene" uid="uid://c1aggrje2gq1k" path="res://enemies/enemy.tscn" id="1_gb7yt"]
+[ext_resource type="Texture2D" uid="uid://cqh052fcm7qoa" path="res://assets/kalamaris/kalamaris_1.png" id="2_ihn7c"]
+[ext_resource type="Texture2D" uid="uid://c4t4hj3wylde1" path="res://assets/kalamaris/kalamaris_2.png" id="3_2dyyc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2crio"]
+atlas = ExtResource("2_ihn7c")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yffl3"]
+atlas = ExtResource("3_2dyyc")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yuya6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2crio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yffl3")
+}],
+"loop": true,
+"name": &"move",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihn7c"]
+size = Vector2(18.6667, 13.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb7yt"]
+size = Vector2(16, 16)
+
+[node name="KalamarisEnemy" instance=ExtResource("1_gb7yt")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_yuya6")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.351713
+
+[node name="HitboxComponent" parent="." index="1"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -2)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_ihn7c")
+
+[node name="HurtboxComponent" parent="." index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_gb7yt")
+
+[node name="MoveComponent" parent="." index="3"]
+velocity = Vector2(0, 20)
+
+[node name="StatsComponent" parent="." index="4"]
+health = 3
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(4.17233e-07, 4.17233e-07)
+scale = Vector2(0.8, 0.8)

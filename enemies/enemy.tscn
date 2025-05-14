@@ -1,0 +1,83 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1aggrje2gq1k"]
+
+[ext_resource type="Script" uid="uid://005k3rtxynjg" path="res://enemies/enemy.gd" id="1_c53s4"]
+[ext_resource type="Script" uid="uid://bakk1nmea1upw" path="res://components/hitbox_component.gd" id="2_gdjci"]
+[ext_resource type="Script" uid="uid://dwq7bi5q0oo2b" path="res://components/hurtbox_component.gd" id="3_7yf5o"]
+[ext_resource type="Script" uid="uid://clhrjoloqjr2c" path="res://components/move_component.gd" id="4_wb2lk"]
+[ext_resource type="Script" uid="uid://rbj8cldddtlp" path="res://components/stats_component.gd" id="5_a4fc5"]
+[ext_resource type="Script" uid="uid://8qg5kbkrjcur" path="res://components/scale_component.gd" id="6_rv2ej"]
+[ext_resource type="Script" uid="uid://bxylq1m1e2uby" path="res://components/shake_component.gd" id="7_t4pbg"]
+[ext_resource type="Script" uid="uid://cb30vdkogpydn" path="res://components/flash_component.gd" id="8_5kjqt"]
+[ext_resource type="Script" uid="uid://igs2lkrbpa34" path="res://components/hurt_component.gd" id="9_3gnt4"]
+[ext_resource type="Script" uid="uid://b2icqvnrurryk" path="res://components/spawner_component.gd" id="10_kxq03"]
+[ext_resource type="PackedScene" uid="uid://co282iod5wyyc" path="res://effects/explosion_effect.tscn" id="11_8tnyj"]
+[ext_resource type="Script" uid="uid://bsjhe56nj4gg7" path="res://components/destroyed_component.gd" id="12_waslk"]
+[ext_resource type="Script" uid="uid://dblrcjambvq8h" path="res://components/score_component.gd" id="13_uuhjc"]
+[ext_resource type="Resource" uid="uid://vrfwv2ai2n3w" path="res://game_stats.tres" id="14_q5xw5"]
+[ext_resource type="AudioStream" uid="uid://l5r8xtqsvavc" path="res://sounds/hit_sound.wav" id="15_mot02"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_c53s4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_gdjci")
+metadata/_custom_type_script = "uid://bakk1nmea1upw"
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+script = ExtResource("3_7yf5o")
+metadata/_custom_type_script = "uid://dwq7bi5q0oo2b"
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("4_wb2lk")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://clhrjoloqjr2c"
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("5_a4fc5")
+metadata/_custom_type_script = "uid://rbj8cldddtlp"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("6_rv2ej")
+sprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://8qg5kbkrjcur"
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("7_t4pbg")
+node = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://bxylq1m1e2uby"
+
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("8_5kjqt")
+sprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://cb30vdkogpydn"
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+script = ExtResource("9_3gnt4")
+stats_component = NodePath("../StatsComponent")
+hurtbox_component = NodePath("../HurtboxComponent")
+metadata/_custom_type_script = "uid://igs2lkrbpa34"
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("10_kxq03")
+scene = ExtResource("11_8tnyj")
+metadata/_custom_type_script = "uid://b2icqvnrurryk"
+
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats_component", "destroy_effect_spawner_component")]
+script = ExtResource("12_waslk")
+actor = NodePath("..")
+stats_component = NodePath("../StatsComponent")
+destroy_effect_spawner_component = NodePath("../SpawnerComponent")
+metadata/_custom_type_script = "uid://bsjhe56nj4gg7"
+
+[node name="ScoreComponent" type="Node" parent="."]
+script = ExtResource("13_uuhjc")
+game_stats = ExtResource("14_q5xw5")
+metadata/_custom_type_script = "uid://dblrcjambvq8h"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mot02")
+bus = &"SFX"
